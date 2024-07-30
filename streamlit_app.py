@@ -63,7 +63,7 @@ def process_url(url, target_keyword):
     }
 
 def main():
-    st.image('https://djeholdingscom.cachefly.net/sites/g/files/aatuss516/files/styles/holding_logo_original/public/2024-03/DXI-new-logo.png?itok=xaoiwJJ7', width='200px')
+    st.image('https://djeholdingscom.cachefly.net/sites/g/files/aatuss516/files/styles/holding_logo_original/public/2024-03/DXI-new-logo.png?itok=xaoiwJJ7', width=200)
     st.title("Meta Writer")
     
     input_method = st.radio("Choose input method:", ["Single URL", "Multiple URLs (Paste)", "Upload CSV"])
