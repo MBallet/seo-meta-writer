@@ -29,7 +29,7 @@ def get_webpage_content(url):
 def generate_meta(prompt, max_tokens):
     try:
         response = client.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": "You are a helpful assistant specialized in writing SEO-friendly metadata."},
                 {"role": "user", "content": prompt}
@@ -44,7 +44,7 @@ def generate_meta(prompt, max_tokens):
 def process_url(url, target_keyword):
     current_title, current_description, h1, body = get_webpage_content(url)
     
-    title_prompt = f"Write an SEO-friendly title for a webpage about '{h1}'. Current title: '{current_title}'. Target keyword: '{target_keyword}'. Body content: {body[:200]}..."
+    title_prompt = f"Write an SEO-friendly title under 70 characters using the following information on the page: H1: '{h1}'. Current title: '{current_title}'. Target keyword: '{target_keyword}'. Body content: {body[:200]}..."
     description_prompt = f"Write an SEO-friendly meta description for a webpage about '{h1}'. Current description: '{current_description}'. Target keyword: '{target_keyword}'. Body content: {body[:200]}..."
     
     new_title = generate_meta(title_prompt, 60)
